@@ -6,6 +6,6 @@ edition = "2018"
 
 [[bin]]
 name = "test"
-path = "src/variables.rs"
+path = "src/types.rs"
 
 [dependencies]
