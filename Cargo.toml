@@ -6,6 +6,6 @@ edition = "2018"
 
 [[bin]]
 name = "test"
-path = "src/types.rs"
+path = "src/tuples.rs"
 
 [dependencies]
