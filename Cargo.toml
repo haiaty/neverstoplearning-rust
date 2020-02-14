@@ -6,6 +6,6 @@ edition = "2018"
 
 [[bin]]
 name = "test"
-path = "src/if.rs"
+path = "src/for.rs"
 
 [dependencies]
