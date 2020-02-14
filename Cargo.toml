@@ -6,6 +6,6 @@ edition = "2018"
 
 [[bin]]
 name = "test"
-path = "src/arrays.rs"
+path = "src/if.rs"
 
 [dependencies]

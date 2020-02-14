@@ -14,7 +14,9 @@ fn main() {
     y = y + 1;
     println!("the value of y is {}", y);
 
-    //shadowing
+    //=============
+    // shadowing
+    //==============
     /*
     you can declare a new variable with the same name as a previous variable, and the new variable shadows the previous variable. 
     Rustaceans say that the first variable is shadowed by the second, which means that the second variable’s value is what appears when the variable is used.
@@ -59,5 +61,12 @@ fn main() {
     //NOTE: the type of the value must be annotated
     const MAX_VALUE: u32 = 100_000; //underscores can be inserted in numeric literals to improve readability
     println!("the value of the costante is:  {}", MAX_VALUE)
+
+    //===========
+    // Statements
+    //============
+
+    // you can't do 
+    let x = (let y = 6); //because it is a statement and it doesn't return the var of assignment as oher languages
 
 }
