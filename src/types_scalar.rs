@@ -4,7 +4,11 @@
 #![allow(non_snake_case)]
 fn main () {
 
-    //scalar types
+    //==============
+    //scalar types -info
+    //=================
+
+    // -  These types are all stored on the stack and popped off the stack when their scope is over
 
     //======================
     // CHAR

@@ -69,4 +69,11 @@ fn main() {
     // you can't do 
     let x = (let y = 6); //because it is a statement and it doesn't return the var of assignment as oher languages
 
+    //==========
+    // SCOPE
+    //============
+    //  A scope is the range within a program for which an item is valid
+
+    //  The variable is valid from the point at which it’s declared until the end of the current scope
+
 }
