@@ -22,4 +22,21 @@ fn main () {
     let myBool: bool = b_tuple.2;
 
     println!("some elements extracted with direct access (.) : {} {}", myUnsignedInteger8Bit, myBool);
+
+    // we can return tuples from functiions
+
+    let (an_integere, a_string) = get_tuple_from_function();
+}
+
+/*
+
+*/
+
+fn get_tuple_from_function() -> (u32, String) {
+
+    let an_integer : u32 = 48;
+
+    let a_string = String::from("a_string");
+
+    (an_integer, a_string)
 }

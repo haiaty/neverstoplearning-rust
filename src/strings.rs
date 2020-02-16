@@ -2,8 +2,10 @@
 
 fn main() {
 
-
+    //===============
     // string literal
+    //================
+    // - string literals are immutable; the type of a_string here is &str  and it is an immutable reference.
     let a_string = "hello";
 
     // String

@@ -3,6 +3,15 @@
 
 fn main() {
 
+    //===============
+    // INFO
+    //==============
+
+    // - If a variable is on stack it gets copied with no problems because
+    //   it is cheaper to do 
+    // - If a variable is on heap, it is not copied without explicit
+    // saying it with method "clone"
+
     //by default variables are immutable.
     // When a variable is immutable, once a value is bound to a name, you can’t change that value.
     let x = '2';
@@ -74,6 +83,49 @@ fn main() {
     //============
     //  A scope is the range within a program for which an item is valid
 
-    //  The variable is valid from the point at which it’s declared until the end of the current scope
+    //  The variable is valid from the point at which it’s declared until the end of the current scopeù
+
+    // when a variable goes out of scope, Rust automatically 
+    // calls the drop function and cleans up the heap memory for that variable
+
+
+    //===========
+    // MOVE 
+    //===========
+
+    // basically when a variable that uses heap is copied onto another one
+    // rust will not make a copy of data on heap but will invalidate the first reference
+
+
+/*
+This will give this error:
+error[E0382]: use of moved value: `s1`
+ --> src/main.rs:5:28
+  |
+3 |     let s2 = s1;
+  |         -- value moved here
+4 |
+5 |     println!("{}, world!", s1);
+  |                            ^^ value used here after move
+*/
+    let s1 = String::from("hello");
+let s2 = s1;
+
+println!("{}, world!", s1);
+
+// If we want to perform a deep clone we can use
+// the method clone.
+// When you see a call to clone, you know that some arbitrary 
+// code is being executed and that code may be expensive
+let one = String::from("hi");
+
+let two = one.clone();
+
+
+//=======
+// COPY
+//========
+
+// scalar types are copied because they are in the stack
 
 }
