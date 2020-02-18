@@ -90,11 +90,15 @@ fn main() {
         ChangeColor(i32, i32, i32), //ChangeColor includes three i32 values.
     }
 
+    let quit = Message::Quit;
+
+    quit.call();
+
     //just as we’re able to define methods on structs using impl, 
     //we’re also able to define methods on enums
     impl Message {
         fn call(&self) {
-            // method body would be defined here
+            println!("the self of this message is: {:#?}", &self);
         }
     }
     

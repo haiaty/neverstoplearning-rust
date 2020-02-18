@@ -6,7 +6,7 @@ edition = "2018"
 
 [[bin]]
 name = "test"
-path = "src/enum.rs"
+path = "src/match.rs"
 #path = "src/scripts/practice_references.rs"
 
 [dependencies]
