@@ -6,7 +6,8 @@ edition = "2018"
 
 [[bin]]
 name = "test"
-path = "src/struct.rs"
+path = "src/test.rs"
 #path = "src/scripts/practice_references.rs"
 
 [dependencies]
+time = "0.1.12"
