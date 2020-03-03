@@ -69,7 +69,7 @@ fn main () {
             println!("State quarter from {:?}!", state);
             25
         },
-    }
-    let x
+    };
+    
 
 }

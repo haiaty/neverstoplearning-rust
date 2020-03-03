@@ -2,7 +2,7 @@
 
 fn main () {
 
-    // the slice type is &str
+    // the slice of string is of type &str, the slice type of an array of integers is of type &[i32]
     // - does not have ownership
     // - Slices let you reference a contiguous sequence of elements in a collection rather than the whole collection
     // - A string slice is a reference to part of a String
