@@ -124,7 +124,7 @@ fn main() {
     };
 
 
-    a_mutable_struct.name = "changed Name".to_string();
+    a_mutable_struct.name = "changed Name";
 
     println!("the name changed is {}", a_mutable_struct.name);
 
@@ -190,14 +190,14 @@ impl Person {
 
 /*
  Tuple structs are useful when you want to give the whole tuple a name
-  and make the tuple be a different type from other tuples, 
+  and make the tuple be a different type from other tuples,
   and naming each field as in a regular struct would be verbose or redundant.
 */
 struct Color(i32, i32, i32);
 
 
 // we can return a struct as expression
-fn build_person(name: String, age: u32) -> Person {
+fn build_person(name: String, age: u8) -> Person {
     Person {
         name: name,
         age: age
@@ -206,9 +206,9 @@ fn build_person(name: String, age: u32) -> Person {
 
 
 // we can use he field init shorthand to use direclty params in struct
-fn build_person_2(name: String, age: u32) -> Person {
+fn build_person_2(name: String, age: u8) -> Person {
     Person {
-        name, 
+        name,
         age
     }
 }
