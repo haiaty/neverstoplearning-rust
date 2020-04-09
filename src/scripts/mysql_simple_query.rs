@@ -1,5 +1,4 @@
 
-// ATTENTION: this is an old api
 //mysql = "17.0.0"
 
 use mysql::params;
