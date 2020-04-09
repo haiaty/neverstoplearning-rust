@@ -1,36 +1,35 @@
 
-//mysql = "17.0.0"
+// new API
+// mysql=18.2.0
 
-use mysql::params;
+use mysql::*;
+use mysql::prelude::*;
 
-#[derive(Debug, PartialEq, Eq)]
-struct MyStructureRecord {
-    always_present: Option<String>,
-    allowed_values: Option<String>
-}
+fn main() -> Result<()> {
+
+    // create the pool
+    let pool = mysql::Pool::new("mysql://root:rootdb@localhost:3301/test")?;
+
+    // get the connection
+    let mut conn = pool.get_conn()?;
+   
+   
+
+    /*
+    ==============
+    using  .fetch(conn)
+    ========
+    a way to get results from a table
+    */
+    let result: Vec<String> = "SELECT table_name FROM information_schema.tables".fetch(conn)?;
+
+    for row in result.iter() {
+
+        println!("{:#?}", row);
+    }
 
 
-fn main() {
 
- let pool = mysql::Pool::new("mysql://root:rootdb@localhost:3306/mydb").unwrap();
 
-    let all_records: Vec<MyStructureRecord> =
-        pool.prep_exec("
-        SELECT always_present, allowed_values
-        FROM my_schema.my_table
-        WHERE platform=:param", params! {
-            "param" => "A PARAM",
-        })
- 
-            .map(|result| {
-                result.map(|x| x.unwrap()).map(|row| {
-                    let (always_present, allowed_values) = mysql::from_row(row);
-
-                    MyStructureRecord {
-                        always_present,
-                        allowed_values
-                    }
-                }).collect()
-            }).unwrap(); // Unwrap `Vec<MyStructureRecord>`
-
+    Ok(())
 }
