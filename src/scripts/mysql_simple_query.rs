@@ -1,4 +1,6 @@
 
+//mysql = "*"
+
 use mysql::params;
 
 #[derive(Debug, PartialEq, Eq)]
