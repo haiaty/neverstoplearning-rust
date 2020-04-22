@@ -1,4 +1,6 @@
-
+//resources:
+// https://doc.rust-lang.org/std/option/enum.Option.html
+// https://blog.burntsushi.net/rust-error-handling/#the-option-type
 
 fn main () {
 
@@ -35,4 +37,63 @@ fn main () {
     //So, how do you get the T value out of a Some variant when you have 
     //a value of type Option<T> so you can use that value?
     //In general, in order to use an Option<T> value, you want to have code that will handle each variant.
+
+    //================
+    // METHODS
+    //================
+
+    // .is_some()  
+    //-----------
+    // is used to check if we have some value
+    
+    let some_number: Option<u32> = Some(6);
+
+    assert_eq!(some_number.is_some(), true);
+
+    // .as_ref() 
+    //-----------
+    // take an Option to a reference to the value inside the original.
+    // think of it like: "I'm borrowing the value of an Option into another Option"
+
+    let some_number: Option<u32> = Some(6);
+
+    let a = some_number.as_ref();
+
+    println!("{:#?}", a);
+
+
+    // .as_mut()
+    //-----------
+    // If you want to modify the inner value of an option. 
+    // so you have a mutable reference so you can modify the innr value
+    let mut x = Some(2);
+    match x.as_mut() {
+        Some(v) => *v = 42,
+        None => {},
+    }
+    assert_eq!(x, Some(42));
+
+    // .expect()
+    //--------------
+    // get the value of an Option or panic with a message
+    let x = Some("Pippo");
+
+    println!("{:?}", x.expect("Custom message if panic"));
+
+     // .unwrap_or()
+    //--------------
+    // get the value of an Option but if there is None it return a the value passes
+    let x = None;
+
+    println!("{:?}", x.unwrap_or("some in case of none"));
+
+    // .unwrap_or_else()
+    //--------------
+    // get the value of an Option or execute the closure and take the result of
+    // its execution
+
+    let o = None;
+
+    println!("{:?}", o.unwrap_or_else(|| 2 * 2))
+
 }
