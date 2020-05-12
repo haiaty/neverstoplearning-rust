@@ -19,5 +19,12 @@ fn main() {
 
 
     println!("{}", s);
+    
+    //=========
+    // remove the last char of a string
+    //==============
+    let mut s = String::from("Hello");
+    
+    s.truncate(s.len()-1)
 
 }
