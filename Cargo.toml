@@ -7,7 +7,7 @@ edition = "2018"
 [[bin]]
 name = "test"
 #path = "src/test.rs"
-path = "src/scripts/functional-square-calculation-with-limit.rs"
+path = "src/design-patterns/builder.rs"
 
 [dependencies]
 time = "0.1.12"
