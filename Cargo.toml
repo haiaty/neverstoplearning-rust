@@ -7,7 +7,9 @@ edition = "2018"
 [[bin]]
 name = "test"
 #path = "src/test.rs"
-path = "src/design-patterns/builder.rs"
+path = "src/web3/send-transaction-ethereum.rs"
 
 [dependencies]
 time = "0.1.12"
+web3 = { git = "https://github.com/tomusdrw/rust-web3" }
+tokio = { version = "0.2", features = ["full"] }
