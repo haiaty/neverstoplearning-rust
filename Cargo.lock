@@ -696,6 +696,8 @@ checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
 name = "learning_rust"
 version = "0.1.0"
 dependencies = [
+ "futures 0.3.5",
+ "rand",
  "time",
  "tokio",
  "web3",

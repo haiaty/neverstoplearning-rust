@@ -7,9 +7,13 @@ edition = "2018"
 [[bin]]
 name = "test"
 #path = "src/test.rs"
-path = "src/web3/send-transaction-ethereum.rs"
+#path = "src/web3/send-transaction.rs"
+path = "src/async-await/async-await-base.rs"
+#path = "src/design-patterns/prototype.rs"
 
 [dependencies]
 time = "0.1.12"
 web3 = { git = "https://github.com/tomusdrw/rust-web3" }
 tokio = { version = "0.2", features = ["full"] }
+futures="0.3.5"
+rand="0.7.3"
