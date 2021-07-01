@@ -13,8 +13,6 @@ fn main () {
 
         fn defaultImpl() {
 
-            //ATTENTION: you can't use
-
             println!("default");
         }
 
