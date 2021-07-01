@@ -12,6 +12,18 @@ fn main () {
         fn emitSound(&self);
 
         fn defaultImpl() {
+
+            //ATTENTION: you can't use
+
+            println!("default");
+        }
+
+        fn defaultImplTwo(&self) {
+
+            //ATTENTION: you can't use struct fields inside a default trait implementation.
+            // if you to do something like this :  self.name
+            // in this default implementation, you will get an error.
+            // Default implementations can only  use methods that are defined on the trait or in a super trait.
             println!("default");
         }
 
@@ -21,10 +33,11 @@ fn main () {
 
     struct Duck {
 
+        name: String
     }
 
     struct Lion {
-
+        name: String
     }
 
     impl SoundEmitter for Lion {
@@ -34,7 +47,7 @@ fn main () {
         }
     }
 
-    let l = Lion {}:
+    let l = Lion {name: "name".into()}:
 
     //================
     // Trait as function parameters
