@@ -1,4 +1,5 @@
-
+// resources to read about
+// - https://www.ameyalokare.com/rust/2017/10/12/rust-str-vs-String.html
 
 fn main() {
 
