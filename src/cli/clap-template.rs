@@ -1,3 +1,36 @@
+/*
+clap = { version = "4.2.1", features = ["derive"] }
+*/
+
+use clap::Parser;
+
+/// Simple program to greet a person
+#[derive(Parser, Debug)]
+#[command(author, version, about, long_about = None)]
+pub struct Args {
+    /// Name of the person to greet
+    #[arg(short, long)]
+    pub package: String,
+
+}
+
+pub fn run() -> Args {
+
+    let args = Args::parse();
+
+    return args;
+
+}
+
+
+
+
+
+
+
+
+//======== OLD VERSION 3.0.0 ===========
+
 use clap::{Arg, App, ArgMatches};
 
 
